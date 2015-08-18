@@ -1,0 +1,26 @@
+ublic class GenericBubbleSort<E> {
+
+
+    public static <E> void bubbleSort(E[] unsorted) {
+        for(int n =1; n< unsorted.length; n++){
+            for(int dentro = 0; dentro < (unsorted.length - n); dentro ++){
+                if((((Comparable) (unsorted[dentro])).compareTo(unsorted[dentro+1])) > 0){
+                    E tmp = unsorted[dentro];
+                    unsorted[dentro] = unsorted[dentro + 1];
+                    unsorted[dentro + 1] = tmp;
+                }                
+            }
+        }
+    }
+
+    public static <E> void display(E[] unsorted) {
+        for(E i : unsorted){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+    
+    
+}	
+	
+
