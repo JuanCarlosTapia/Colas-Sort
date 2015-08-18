@@ -1,0 +1,8 @@
+public interface  ILista<E> {
+	public void Push(Nodo<E> nodo);
+	public Nodo<E> Pop();
+	public void Swap(Nodo<E> nodo1, Nodo<E> nodo2);
+	
+	
+	
+}
