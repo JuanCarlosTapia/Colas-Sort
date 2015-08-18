@@ -1,4 +1,4 @@
-ublic class GenericBubbleSort<E> {
+public class GenericBubbleSort<E> {
 
 
     public static <E> void bubbleSort(E[] unsorted) {
