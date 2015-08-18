@@ -1,4 +1,3 @@
-
 public class Cola<E> implements ILista{
 	// Parametros
 	private boolean Empty;
@@ -40,6 +39,46 @@ public class Cola<E> implements ILista{
 	
 
 	
+
+	@Override
+	public void Push(Nodo nodo) {
+		if(Empty){
+			Cabeza = new NodoSimple((Comparable) nodo);
+			Actual = Cabeza;
+			Empty = false;
+			return;
+		}
+		
+			NodoSimple newNodo = new NodoSimple((Comparable) nodo);
+			Actual.setSiguiente(newNodo);
+			Actual = newNodo;
+	}
+
+	@Override
+	public Nodo Pop() {
+		if(Empty){
+			return null;
+		}
+		if(Cabeza.getSiguiente()==null){
+			Nodo regreso = (Nodo) Cabeza.getValor();
+			Empty=true;
+			Cabeza = null;
+			Actual = Cabeza;
+			return regreso;
+		}
+		Nodo regreso = (Nodo) Cabeza.getValor();
+		Cabeza = Cabeza.getSiguiente();
+		return regreso;
+	}
+
+	@Override
+	public void Swap(Nodo nodo1, Nodo nodo2) {
+		
+		
+	}
+	
+}
+
 
 	
 
