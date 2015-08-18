@@ -1,0 +1,10 @@
+public abstract class Nodo <E>{
+    E Valor;
+    Nodo Siguiente;           
+    
+    public abstract void setSiguiente(Nodo<E> nodo);
+    public abstract Nodo<E> getSiguiente();
+    public abstract E getValor();
+   
+    
+}
