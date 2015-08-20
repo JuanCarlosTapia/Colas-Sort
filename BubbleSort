@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class BubbleSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int cantidad;
+		int c1;
+		int c2;
+		int swap;
+		
+	Scanner scann = new Scanner(System.in);
+	System.out.println("Ingrese la cantidad de elementos");
+	cantidad = scann.nextInt();
+	
+	int arreglo [] = new int[cantidad];
+	System.out.println("Ingrese los " + cantidad + " elementos.");
+	
+	for (c1 = 0; c1 < cantidad; c1++)
+	arreglo[c1] =scann.nextInt();
+	
+	for (c1 = 0; c1 < ( cantidad - 1 ); c1++){
+		for (c2 =0; c2 < cantidad - c1 - 1; c2++){
+			if (arreglo[c2] > arreglo[c2+1]){
+				swap = arreglo[c2];
+				arreglo[c2] = arreglo[c2+1];
+				arreglo[c2+1] = swap;
+				
+			}
+		}
+	}
+	
+	System.out.println("Lista ordenada de numeros:");
+	
+	for (c1 = 0; c1 < cantidad; c1++);
+	System.out.println(arreglo[c1]);
+	}
+
+}
