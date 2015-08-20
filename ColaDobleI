@@ -1,0 +1,128 @@
+public class ColaDobleI  <E>  {
+	
+	
+	private NodoDobleI <E> Final;
+	private boolean Empty;
+	private NodoDobleI <E> inicio;
+	private NodoDobleI <E> actual;
+	
+	public ColaDobleI(){
+		
+		this.Empty = true;
+		
+		
+		inicio = null;
+		actual = inicio;
+	}
+
+	public NodoDobleI<E> getFinal() {
+		return Final;
+	}
+
+	public void setFinal(NodoDobleI<E> final1) {
+		Final = final1;
+	}
+
+	public boolean isEmpty() {
+		return Empty;
+	}
+
+	public void setEmpty(boolean empty) {
+		Empty = empty;
+	}
+
+	public NodoDobleI<E> getInicio() {
+		return inicio;
+	}
+
+	public void setInicio(NodoDobleI<E> inicio) {
+		this.inicio = inicio;
+	}
+
+	public NodoDobleI<E> getActual() {
+		return actual;
+	}
+
+	public void setActual(NodoDobleI<E> actual) {
+		this.actual = actual;
+	}
+	
+	
+	public void Push ( E valor){
+		
+		
+		if (Empty){
+			
+			inicio = new NodoDobleI<E> (valor);
+			Final = inicio;
+			Empty= false;
+			return;
+			
+		}
+		
+		NodoDobleI <E> newNodo = new NodoDobleI <E> (valor);
+		Final.setSiguiente(newNodo);
+		newNodo.setAnterior(Final);
+		Final = newNodo;
+	}
+	
+	
+	public E Pop (){
+		if (Empty){
+			return null;
+		}
+		
+		if (inicio.getSiguiente() == null){
+			 E regreso = inicio.getDato();
+			Empty = true;
+			inicio = null;
+			Final = inicio;
+			return regreso;
+		}
+		E regreso = inicio.getDato();
+		inicio = inicio.getSiguiente();
+		return regreso;
+		
+	}
+	
+	public void PushIn (E valor){
+		
+		
+		if(Empty){
+			inicio = new NodoDobleI <E> (valor);
+			Final = inicio;
+			Empty = false;
+			return;
+		}
+		
+			NodoDobleI <E> newNodo = new NodoDobleI <E> (valor);
+			inicio.setAnterior(newNodo);
+			newNodo.setSiguiente(inicio);
+	}
+	
+	
+	public E PopInv(){ // Metodo para sacar valores de la cola
+		if(Empty){
+			return null;
+		}
+		if(Final.getAnterior()==null){
+			E regreso =  Final.getDato();
+			Empty=true;
+			inicio = null;
+			Final = inicio;
+			return regreso;
+		}
+		E regreso =  Final.getDato();
+		Final = Final.getAnterior();
+		return regreso;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
