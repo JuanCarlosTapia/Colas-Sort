@@ -1,0 +1,52 @@
+public class NodoDobleI <E>  {
+	
+	NodoDobleI <E> Anterior;
+	E dato;
+	NodoDobleI<E> siguiente;
+	
+	
+	
+	public NodoDobleI(){
+		this.dato = dato;
+		this.siguiente = null;
+		this.Anterior = null;
+	}
+	
+	public E getDato() {
+		return dato;
+	}
+
+	public void setDato(E dato) {
+		this.dato = dato;
+	}
+
+	public NodoDobleI<E> getSiguiente() {
+		return siguiente;
+	}
+
+	public void setSiguiente(NodoDobleI <E> siguiente) {
+		this.siguiente = siguiente;
+	}
+
+	public NodoDobleI (E dato){
+		this.dato = dato;
+		siguiente = null;
+		Anterior = null;
+	}
+
+
+
+	public NodoDobleI <E> getAnterior() {
+		return Anterior;
+	}
+
+
+
+	public void setAnterior(NodoDobleI <E> anterior) {
+		Anterior = anterior;
+	}
+	
+	
+	
+
+}
