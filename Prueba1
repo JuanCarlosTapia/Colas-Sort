@@ -1,0 +1,39 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class Prueba1<E> {
+
+	@Test
+	public void test() {
+		
+		//Cola Simple
+		
+		Cola <Integer> cola  = new Cola <Integer>();
+		
+		cola.Push(20);
+		
+		System.out.println( cola.Pop());
+		System.out.println(cola.Pop());
+		
+		
+		//Cola Doble
+		
+		ColaDoble <Integer> colaII = new ColaDoble <Integer>();
+		
+		colaII.Push(40);
+		System.out.println(colaII.Pop());
+		System.out.println(colaII.Pop());
+		
+		colaII.PushIn(70);
+		System.out.println(colaII.PopInv());
+		
+
+		
+		
+		
+		
+	}
+
+}
