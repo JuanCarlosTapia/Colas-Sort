@@ -1,0 +1,94 @@
+public class ColaI <E> {
+	
+	private NodoI <E> inicio;
+	private NodoI <E> actual;
+	private boolean Empty;
+	
+	//Inicilizaion de atributos
+	
+	public ColaI(){
+		
+		this.Empty = true;
+		
+		
+		inicio = null;
+		actual = inicio;
+	}
+
+	public NodoI<E> getInicio() {
+		return inicio;
+	}
+
+	public void setInicio(NodoI<E> inicio) {
+		this.inicio = inicio;
+	}
+
+	public NodoI<E> getActual() {
+		return actual;
+	}
+
+	public void setActual(NodoI <E> actual) {
+		this.actual = actual;
+	}
+
+	public boolean isEmpty() {
+		return Empty;
+	}
+
+	public void setEmpty(boolean empty) {
+		Empty = empty;
+	}
+	
+	public void Push ( E valor){
+		
+		
+		if (Empty){
+			
+			inicio = new NodoI<E> (valor);
+			actual = inicio;
+			Empty= false;
+			return;
+			
+		}
+		
+		NodoI <E> newNodo = new NodoI <E> (valor);
+		actual.setSiguiente(newNodo);
+		actual = newNodo;
+	}
+	
+	public E Pop (){
+		if (Empty){
+			return null;
+		}
+		
+		if (inicio.getSiguiente() == null){
+			 E regreso = inicio.getDato();
+			Empty = true;
+			inicio = null;
+			actual = inicio;
+			return regreso;
+		}
+		E regreso = inicio.getDato();
+		inicio = inicio.getSiguiente();
+		return regreso;
+		
+	}
+	
+	
+	
+	
+	
+	
+		
+	}
+
+
+
+	
+	
+	
+	
+
+
+
+
